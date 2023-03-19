@@ -27,49 +27,32 @@
     <button type="submit" class="mb-1">Add</button>
     <table mat-table [dataSource]=[1,2,3,4] class="mat-elevation-z8">
       <!-- Position Column -->
-      <ng-container matColumnDef="position">
-        <th mat-header-cell *matHeaderCellDef> No. </th>
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
         <td mat-cell *matCellDef="let data"> {{data}} </td>
       </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="customer-name">
-        <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+      <ng-container matColumnDef="service-name">
+        <th mat-header-cell *matHeaderCellDef> Service Name </th>
         <td mat-cell *matCellDef="let data"> {{data}} </td>
       </ng-container>
 
       <!-- CA Number Column -->
-      <ng-container matColumnDef="ca">
-        <th mat-header-cell *matHeaderCellDef> CA </th>
+      <ng-container matColumnDef="report">
+        <th mat-header-cell *matHeaderCellDef> Report </th>
         <td mat-cell *matCellDef="let data"> {{data}} </td>
       </ng-container>
 
       <!-- Symbol Column -->
-      <ng-container matColumnDef="customer-email">
-        <th mat-header-cell *matHeaderCellDef> Customer Email </th>
+      <ng-container matColumnDef="noted">
+        <th mat-header-cell *matHeaderCellDef> หมายเหตุ </th>
         <td mat-cell *matCellDef="let data"> {{data}} </td>
       </ng-container>
 
-      <ng-container matColumnDef="customer-phone">
-        <th mat-header-cell *matHeaderCellDef> Customer Phone </th>
-        <td mat-cell *matCellDef="let data"> {{data}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="customer-address">
-        <th mat-header-cell *matHeaderCellDef> Customer Address </th>
-        <td mat-cell *matCellDef="let data"> {{data}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="edit-delete">
-        <th mat-header-cell *matHeaderCellDef> </th>
-        <td mat-cell *matCellDef="let data"> {{data}} </td>
-      </ng-container>
-
-      <tr mat-header-row
-        *matHeaderRowDef="['position','customer-name','ca','customer-email','customer-phone','customer-address','edit-delete']">
+      <tr mat-header-row *matHeaderRowDef="['date','service-name','report','noted']">
       </tr>
-      <tr mat-row
-        *matRowDef="let row; columns: ['position','customer-name','ca','customer-email','customer-phone','customer-address','edit-delete'];">
+      <tr mat-row *matRowDef="let row; columns: ['date','service-name','report','noted'];">
       </tr>
     </table>
   </div>

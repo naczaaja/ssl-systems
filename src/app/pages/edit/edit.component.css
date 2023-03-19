@@ -94,3 +94,9 @@ td {
   padding: 0.5rem;
   border-bottom: 1px solid #ddd;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
