@@ -1,0 +1,210 @@
+<app-header></app-header>
+<nav>
+  <ul>
+    <li><a href="#customer-management">Customer Management</a></li>
+    <li><a href="#lead-tracking">Lead Tracking</a></li>
+    <li><a href="#sales-forecasting">Sales Forecasting</a></li>
+    <li><a href="#reporting">Reporting</a></li>
+  </ul>
+</nav>
+<main>
+  <section id="customer-management">
+    <h2>Customer Management</h2>
+    <form>
+      <label for="customer-name">Customer Name:</label>
+      <input type="text" id="customer-name" name="customer-name"><br><br>
+      <label for="customer-email">Customer Email:</label>
+      <input type="email" id="customer-email" name="customer-email"><br><br>
+      <label for="customer-phone">Customer Phone:</label>
+      <input type="tel" id="customer-phone" name="customer-phone"><br><br>
+      <label for="customer-address">Customer Address:</label>
+      <input type="text" id="customer-address" name="customer-address"><br><br>
+      <button type="submit">Add Customer</button>
+    </form>
+    <table mat-table [dataSource]=[1,2,3,4] class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="customer-name">
+        <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <!-- CA Number Column -->
+      <ng-container matColumnDef="ca">
+        <th mat-header-cell *matHeaderCellDef> CA </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="customer-email">
+        <th mat-header-cell *matHeaderCellDef> Customer Email </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="customer-phone">
+        <th mat-header-cell *matHeaderCellDef> Customer Phone </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="customer-address">
+        <th mat-header-cell *matHeaderCellDef> Customer Address </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit-delete">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <tr mat-header-row
+        *matHeaderRowDef="['position','customer-name','ca','customer-email','customer-phone','customer-address','edit-delete']"></tr>
+      <tr mat-row
+        *matRowDef="let row; columns: ['position','customer-name','ca','customer-email','customer-phone','customer-address','edit-delete'];">
+      </tr>
+      <thead>
+        <tr>
+          <th>Customer Name</th>
+          <th>Customer Email</th>
+          <th>Customer Phone</th>
+          <th>Customer Address</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>นายไพฑูรย์ น้อยสืบสาย</td>
+          <td>paitoon_mdf@kijchai.co.th</td>
+          <td>089-5499567</td>
+          <td>บริษัท ส.กิจชัยเอ็นเตอร์ไพรส์ จำกัด (มหาชน)</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>นายสถาพร แก้วผสม</td>
+          <td>k.sathaporn@rayongboard.com</td>
+          <td>098-5429354</td>
+          <td>บริษัท ระยอง พาเนล จำกัด</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>ว่าที่ ร.ต.สันติ ศรีสุข</td>
+          <td>santi.srisuk@Grohe.com</td>
+          <td>085-9059789</td>
+          <td>บริษัท โกรเฮ่ สยาม จำกัด</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>นายวรวรรธน์ ขวัญดี</td>
+          <td>worawat.khwandee@ingredion.com</td>
+          <td>081-4085515</td>
+          <td>บริษัท อินกริดิออน (ประเทศไทย)จำกัด</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>นายอุกฤษ ละอองแก้ว</td>
+          <td>ukrit.lao@cpf.co.th</td>
+          <td>088-2805905</td>
+          <td>บริษัท เจริญโภคภัณฑ์อาหาร จำกัด (มหาชน)</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>นายสยาม ศรนุรักษ์</td>
+          <td>sayamsrnuraks@gmail.com</td>
+          <td>091-2356697</td>
+          <td>บริษัท ซิน หย่วน ด้า รับเบอร์(ประเทศไทย) จำกัด</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="lead-tracking">
+    <h2>Lead Tracking</h2>
+    <form>
+      <label for="lead-name">Lead Name:</label>
+      <input type="text" id="lead-name" name="lead-name"><br><br>
+      <label for="lead-email">Lead Email:</label>
+      <input type="email" id="lead-email" name="lead-email"><br><br>
+      <label for="lead-phone">Lead Phone:</label>
+      <input type="tel" id="lead-phone" name="lead-phone"><br><br>
+      <label for="lead-source">Lead Source:</label>
+      <input type="text" id="lead-source" name="lead-source"><br><br>
+      <button type="submit">Add Lead</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Lead Name</th>
+          <th>Lead Email</th>
+          <th>Lead Phone</th>
+          <th>Lead Source</th>
+          <th>Edit/Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bob Johnson</td>
+          <td>bob.johnson@example.com</td>
+          <td>555-4321</td>
+          <td>Referral</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+        <tr>
+          <td>Susan Lee</td>
+          <td>susan.lee@example.com</td>
+          <td>555-8765</td>
+          <td>Website</td>
+          <td><a href="#">Edit</a>/<a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="sales-forecasting">
+    <h2>Sales Forecasting</h2>
+    <p>Enter your forecasted sales numbers for the next 6 months:</p>
+    <form>
+      <label for="month1-sales">Month 1:</label>
+      <input type="number" id="month1-sales" name="month1-sales"><br><br>
+      <label for="month2-sales">Month 2:</label>
+      <input type="number" id="month2-sales" name="month2-sales"><br><br>
+      <label for="month3-sales">Month 3:</label>
+      <input type="number" id="month3-sales" name="month3-sales"><br><br>
+      <label for="month4-sales">Month 4:</label>
+      <input type="number" id="month4-sales" name="month4-sales"><br><br>
+      <label for="month5-sales">Month 5:</label>
+      <input type="number" id="month5-sales" name="month5-sales"><br><br>
+      <label for="month6-sales">Month 6:</label>
+      <input type="number" id="month6-sales" name="month6-sales"><br><br>
+      <button type="submit">Update Forecast</button>
+    </form>
+    <p>Your sales forecast for the next 6 months:</p>
+    <ul>
+      <li>Month 1: $50,000</li>
+      <li>Month 2: $60,000</li>
+      <li>Month 3: $70,000</li>
+      <li>Month 4: $80,000</li>
+      <li>Month 5: $90,000</li>
+      <li>Month 6: $100,000</li>
+    </ul>
+  </section>
+  <section id="reporting">
+    <h2>Reporting</h2>
+    <p>Select a report to view:</p>
+    <form>
+      <label for="report-type">Report Type:</label>
+      <select id="report-type" name="report-type">
+        <option value="sales-by-month">Sales by Month</option>
+        <option value="leads-by-source">Leads by Source</option>
+        <option value="customer-list">Customer List</option>
+      </select>
+      <button type="submit">View Report</button>
+    </form>
+    <p>Report results go here.</p>
+  </section>
+</main>
+<footer>
+  <p>© 2023 My CRM Program. All rights reserved.</p>
+</footer>

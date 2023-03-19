@@ -1,0 +1,79 @@
+<h1>Edit Customer Information</h1>
+<form>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <div class="col-12 mb-3">
+    <p class="fw-bold">เอกสารแนบ (Report การเข้าพบ, etc.)</p>
+    <ngx-dropzone (change)="onSelect($event)">
+      <ngx-dropzone-label>
+        ลากไฟล์มาไว้ที่นี้ หรือ
+        <span class="text-pea-color fw-bold">เลือกไฟล์เพื่ออัปโหลด</span>
+      </ngx-dropzone-label>
+      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+    </ngx-dropzone>
+  </div>
+
+  <div class="col-12 mb-3">
+    <p class="fw-bold">Communication History</p>
+    <button type="submit" class="mb-1">Add</button>
+    <table mat-table [dataSource]=[1,2,3,4] class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="customer-name">
+        <th mat-header-cell *matHeaderCellDef> Customer Name </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <!-- CA Number Column -->
+      <ng-container matColumnDef="ca">
+        <th mat-header-cell *matHeaderCellDef> CA </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="customer-email">
+        <th mat-header-cell *matHeaderCellDef> Customer Email </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="customer-phone">
+        <th mat-header-cell *matHeaderCellDef> Customer Phone </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="customer-address">
+        <th mat-header-cell *matHeaderCellDef> Customer Address </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="edit-delete">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let data"> {{data}} </td>
+      </ng-container>
+
+      <tr mat-header-row
+        *matHeaderRowDef="['position','customer-name','ca','customer-email','customer-phone','customer-address','edit-delete']">
+      </tr>
+      <tr mat-row
+        *matRowDef="let row; columns: ['position','customer-name','ca','customer-email','customer-phone','customer-address','edit-delete'];">
+      </tr>
+    </table>
+  </div>
+
+  <button type="submit">Save</button>
+  <button type="button" onclick="cancelEdit()">Cancel</button>
+</form>
