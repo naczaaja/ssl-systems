@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { NgxDropzoneModule } from 'ngx-dropzone';
 
@@ -17,6 +18,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { MatTableModule } from '@angular/material/table';
     MatTreeModule,
     MatSidenavModule,
     MatTableModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

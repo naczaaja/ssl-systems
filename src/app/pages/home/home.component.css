@@ -109,3 +109,9 @@ button[type="submit"]:hover {
 ul li {
   margin-bottom: 0.5rem;
 }
+
+.full-width {
+  width: 100%;
+  padding-inline: 10px;
+}
+
